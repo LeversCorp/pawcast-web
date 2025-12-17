@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#F27858] selection:text-white overflow-x-hidden">
-      {/* (A) Header - [복구] 배포 버전의 깔끔한 로고 스타일 */}
+      {/* (A) Header - [유지] 배포 버전의 깔끔한 로고 스타일 */}
       <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -80,7 +80,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="text-center md:text-left z-10 order-1"
               >
-                {/* [복구] 배포 버전의 배지 스타일 */}
+                {/* [유지] 배포 버전의 배지 스타일 */}
                 <div className="inline-block px-4 py-1.5 bg-orange-50 text-[#EE4A44] rounded-full text-sm font-semibold mb-6">
                   반려견을 아끼는 진심 반려인들을 위한 필수 앱 🐕
                 </div>
@@ -90,9 +90,11 @@ export default function Home() {
                   <span className="text-[#EE4A44]">나가도 될까요?</span>
                 </h1>
 
-                {/* [유지] 현재 버전의 개선된 서브 텍스트 (박스 스타일) */}
-                <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed break-keep font-medium bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
-                  <span className="font-bold text-[#EE4A44]">포캐스트</span>가 제공하는 견종별 맞춤형 산책 가이드.<br/>
+                {/* [수정] PC에서만 너비를 398px(버튼길이 합)로 고정 */}
+                {/* inline-block(모바일 유지) / md:block(PC 블록화) / md:w-[398px](PC 너비 고정) */}
+                <p className="inline-block md:block md:w-[398px] text-lg md:text-xl text-gray-700 mb-8 leading-relaxed break-keep font-medium bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                  <span className="font-bold text-[#EE4A44]">포캐스트</span>가 제공하는<br/>
+                  견종별 맞춤형 산책 가이드.<br/>
                   날씨, 온도, 미세먼지, 풍속까지 분석한<br/>
                   <span className="font-bold text-gray-900 underline decoration-orange-200 decoration-4 underline-offset-4">'산책 환경 등급'</span>을 지금 확인하세요.
                 </p>
