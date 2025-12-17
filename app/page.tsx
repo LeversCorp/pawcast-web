@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Layout, 
-  CloudSun, CalendarDays, Dog
+  CloudSun, CalendarDays, Dog,
+  Mail, Instagram 
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -27,7 +28,7 @@ import charPadoogi from '../src/assets/images/character/padoogi.png';
 import charBishong from '../src/assets/images/character/bishong.png';
 import charChiwawa from '../src/assets/images/character/chiwawa.png';
 
-// [수정] 가로형 와이드 위젯 이미지로 교체
+// [유지] 가로형 와이드 위젯 이미지
 import widgetGood from '../src/assets/images/widget/good_wide.png';
 
 import logoImage_orange from '../src/assets/images/logo/orange.png';
@@ -46,7 +47,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#F27858] selection:text-white overflow-x-hidden">
-      {/* (A) Header */}
+      {/* (A) Header - [복구] 배포 버전의 깔끔한 로고 스타일 */}
       <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -79,17 +80,21 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="text-center md:text-left z-10 order-1"
               >
+                {/* [복구] 배포 버전의 배지 스타일 */}
                 <div className="inline-block px-4 py-1.5 bg-orange-50 text-[#EE4A44] rounded-full text-sm font-semibold mb-6">
                   반려견을 아끼는 진심 반려인들을 위한 필수 앱 🐕
                 </div>
+                
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                   지금 산책 <br/>
                   <span className="text-[#EE4A44]">나가도 될까요?</span>
                 </h1>
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                  반려견 맞춤형 산책 가이드.<br/>
+
+                {/* [유지] 현재 버전의 개선된 서브 텍스트 (박스 스타일) */}
+                <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed break-keep font-medium bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                  <span className="font-bold text-[#EE4A44]">포캐스트</span>가 제공하는 견종별 맞춤형 산책 가이드.<br/>
                   날씨, 온도, 미세먼지, 풍속까지 분석한<br/>
-                  <span className="font-bold text-gray-800">'산책 환경 등급'</span>을 지금 확인하세요.
+                  <span className="font-bold text-gray-900 underline decoration-orange-200 decoration-4 underline-offset-4">'산책 환경 등급'</span>을 지금 확인하세요.
                 </p>
 
                 {/* 앱 다운로드 링크 */}
@@ -167,12 +172,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* (C) Features Section */}
+        {/* (C) Features Section - [유지] 개선된 정렬 및 줄바꿈 */}
         <section className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">반려견을 위한 완벽한 산책 준비</h2>
-              <p className="text-gray-600">포캐스트가 제공하는 특별한 기능을 만나보세요</p>
+              <h2 className="text-3xl font-bold mb-4">
+                반려견을 위한<br className="block md:hidden"/> 완벽한 산책 준비
+              </h2>
+              <p className="text-gray-600 break-keep">포캐스트가 제공하는 특별한 기능을 만나보세요</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -183,7 +190,7 @@ export default function Home() {
                   <CloudSun size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">견종별 맞춤형 산책 환경 등급</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-left break-keep">
                   반려견은 견종마다 견딜 수 있는 온도와 호흡기 질병 취약도가 다릅니다.<br/>
                   <span className="font-semibold text-[#EE4A44]">포캐스트</span>는 획일적인 기준이 아닌, 견종별 특성을 반영한 맞춤형 알고리즘으로 가장 정확한 산책 환경 등급을 제공합니다.
                 </p>
@@ -195,7 +202,7 @@ export default function Home() {
                   <CalendarDays size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">산책 예보 (Forecast)</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-left break-keep">
                   "오후에 비가 올까?" 시간별(24h), 일별 예보를 통해 반려견과 함께할 최적의 산책 시간을 미리 계획하세요.
                 </p>
               </motion.div>
@@ -220,7 +227,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-xl font-bold mb-3">귀여운 캐릭터</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-left break-keep">
                   딱딱한 숫자 대신, 귀여운 반려견 캐릭터가 표정과 행동으로 직관적인 날씨 정보를 전달해요.
                 </p>
               </motion.div>
@@ -236,10 +243,9 @@ export default function Home() {
 
                 {/* 위젯 이미지 영역: 가로형 이미지 적용 및 너비 확장 */}
                 <div className="flex justify-center items-center mb-8">
-                    {/* 가로형 위젯을 위해 너비를 늘림 (w-32 -> w-full max-w-[300px]) */}
                     <div className="relative w-full max-w-[300px] h-auto transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1">
                          <Image 
-                            src={widgetGood} // good_wide.png 파일 사용
+                            src={widgetGood} 
                             alt="Home Widget Wide" 
                             className="w-full h-auto object-contain drop-shadow-xl rounded-2xl" 
                          />
@@ -247,7 +253,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-xl font-bold mb-3">홈 위젯 (Widget)</h3>
-                <p className="text-gray-700 leading-relaxed font-medium">
+                <p className="text-gray-700 leading-relaxed font-medium text-left break-keep">
                   앱을 켜지 않아도 괜찮아요. 핸드폰 배경화면에서 귀여운 캐릭터와 함께 현재 산책 지수를 바로 확인하세요!
                 </p>
               </motion.div>
@@ -256,10 +262,10 @@ export default function Home() {
         </section>
       </main>
 
-      {/* (D) Footer */}
+      {/* (D) Footer - [유지] 인스타그램/이메일 링크 포함 */}
       <footer className="bg-[#EE4A44] text-white py-12 border-t border-[#EE4A44]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <div className="mb-6">
+          <div className="mb-8">
             <Link href="/" className="block hover:opacity-90 transition-opacity">
               <Image
                 src={logoImage_white}
@@ -271,14 +277,34 @@ export default function Home() {
             </Link>
           </div>
           
-          <div className="flex space-x-6 mb-8 text-sm font-medium">
-            <a href="mailto:support@pawcastapp.com" className="hover:text-orange-100 transition-colors flex items-center gap-2">
-              <span>Contact Support</span>
+          {/* Footer Links: Email & Instagram */}
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-8 text-sm font-medium">
+            
+            {/* 이메일 링크 */}
+            <a 
+              href="mailto:support@pawcastapp.com" 
+              className="flex items-center gap-2 hover:text-orange-100 transition-colors group"
+            >
+              <Mail size={18} className="group-hover:scale-110 transition-transform" />
+              <span>support@pawcastapp.com</span>
+            </a>
+
+            {/* 구분선 (데스크탑에서만 표시) */}
+            <div className="hidden md:block w-px h-4 bg-white/30"></div>
+
+            {/* 인스타그램 링크 */}
+            <a 
+              href="https://www.instagram.com/official_pawcast?igsh=MWJrdjJxbzc2d3FiNA%3D%3D&utm_source=qr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-orange-100 transition-colors group"
+            >
+              <Instagram size={18} className="group-hover:scale-110 transition-transform" />
+              <span>포캐스트 공식 인스타그램</span>
             </a>
           </div>
 
           <div className="text-xs text-white/80 text-center leading-relaxed">
-            <p className="mb-2 font-medium">Email: support@pawcastapp.com</p>
             <p>&copy; 2025 Levers Corp. All rights reserved.</p>
           </div>
         </div>
