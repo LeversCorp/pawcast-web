@@ -55,7 +55,7 @@ export default function Home() {
               <Link href="/" className="flex items-center">
                 <Image
                   src={logoImage_orange}
-                  alt="Pawcast Logo"
+                  alt="포캐스트 - 반려견 산책 환경 정보 앱 로고" // 로고 설명 구체화
                   width={140}
                   height={40}
                   className="h-10 w-auto object-contain"
@@ -86,8 +86,8 @@ export default function Home() {
                 </div>
                 
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                  지금 산책 <br/>
-                  <span className="text-[#EE4A44]">나가도 될까요?</span>
+                  반려견 산책, <br/> {/* '반려견 산책' 키워드를 제목에 자연스럽게 삽입 */}
+                  <span className="text-[#EE4A44]">지금 나가도 될까요?</span>
                 </h1>
 
                 {/* [수정] PC에서만 너비를 398px(버튼길이 합)로 고정 */}
@@ -108,7 +108,7 @@ export default function Home() {
                   >
                     <Image 
                       src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                      alt="Download on the App Store"
+                      alt="Pawcast 반려견 산책 어플리케이션 앱스토어 다운로드"
                       width={179} 
                       height={60}
                       className="h-[60px] w-auto"
@@ -122,7 +122,7 @@ export default function Home() {
                   >
                     <Image 
                       src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                      alt="Get it on Google Play"
+                      alt="Pawcast 강아지 산책 앱 구글 플레이스토어 다운로드"
                       width={203} 
                       height={60}
                       className="h-[60px] w-auto"
@@ -193,8 +193,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">견종별 맞춤형 산책 환경 등급</h3>
                 <p className="text-gray-600 leading-relaxed text-left break-keep">
-                  반려견은 견종마다 견딜 수 있는 온도와 호흡기 질병 취약도가 다릅니다.<br/>
-                  <span className="font-semibold text-[#EE4A44]">포캐스트</span>는 획일적인 기준이 아닌, 견종별 특성을 반영한 맞춤형 알고리즘으로 가장 정확한 산책 환경 등급을 제공합니다.
+                  <span className="font-semibold text-[#EE4A44]">포캐스트</span>는 반려견 산책 어플리케이션 중 유일하게 견종마다 다른 신체적 특성을 반영합니다.<br/> {/* 어플리케이션 키워드 활용 */}
+                  강아지 산책 날씨와 미세먼지 수치를 데이터로 분석하여 가장 정확한 산책 환경 등급을 제공합니다. {/* 강아지 산책 키워드 활용 */}
                 </p>
               </motion.div>
 
